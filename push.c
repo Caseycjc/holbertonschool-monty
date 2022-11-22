@@ -39,3 +39,19 @@ void _push(stack_t **stack, unsigned int line_number)
 		add_dnodeint(stack, push_arg);
 	}
 }
+/**
+ * _pall - print all function
+ * @stack: pointer to a linked list stack
+ * @line_number: number of the line the opcode occurs on
+ */
+void _pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+{
+	stack_t *runner;
+
+	runner = *stack;
+	while (runner != NULL)
+	{
+		printf("%d\n", runner->n);
+		runner = runner->next;
+	}
+}
