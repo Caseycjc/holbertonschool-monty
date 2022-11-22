@@ -40,6 +40,9 @@ typedef struct instruction_s
 } instruction_t;
 
 /* Monty Prototypes */
+void error_exit(stack_t **stack);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
+typedef void (*instruct_func)(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int number);
 void _push(stack_t **stack, unsigned int number);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
@@ -48,5 +51,7 @@ void free_dlistint(stack_t *head);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void error_exit(stack_t **stack);
 int isnumber(char *str);
-
+instruct_func get_op_func(char *str);
+void read_file(char *filename, stack_t **stack);
+char *parse_line(char *line);
 #endif
