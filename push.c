@@ -38,6 +38,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	{
 		add_dnodeint(stack, push_arg);
 	}
+
 }
 /**
  * _pall - print all function
